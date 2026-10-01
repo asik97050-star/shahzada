@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: #0b0f19;
+    color: #e2e8f0;
+    min-height: 100vh;
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background: #111827;
+    border-right: 1px solid #1f293d;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-box {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, #a855f7, #ec4899);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.brand h2 {
+    font-size: 1.1rem;
+    color: #f3f4f6;
+}
+
+.brand p {
+    font-size: 0.8rem;
+    color: #6b7280;
+}
+
+.quick-info {
+    background: #1e293b;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.quick-info h3 {
+    font-size: 0.9rem;
+    color: #c084fc;
+    margin-bottom: 10px;
+}
+
+.quick-info ul {
+    list-style: none;
+    font-size: 0.82rem;
+    color: #94a3b8;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.quick-info li::before {
+    content: "• ";
+    color: #ec4899;
+}
+
+/* Main Content Area */
+.main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #1e293b;
+}
+
+.top-header h1 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #f43f5e, #fb7185, #d946ef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge {
+    background: rgba(217, 70, 239, 0.15);
+    color: #e879f9;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: 1px solid rgba(217, 70, 239, 0.3);
+}
+
+/* Dashboard Grid - 2 Columns */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.panel {
+    background: #111827;
+    border: 1px solid #1f293d;
+    border-radius: 14px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: all 0.2s ease;
+}
+
+.panel:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.1);
+}
+
+.highlight-panel {
+    border-color: #d946ef;
+    background: linear-gradient(180deg, #111827 0%, #19102e 100%);
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.panel-head .num {
+    background: #1e293b;
+    color: #38bdf8;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.panel-head h3 {
+    font-size: 1rem;
+    color: #f1f5f9;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.inputs-3 input {
+    width: 33.3%;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    background: #0b0f19;
+    border: 1px solid #273549;
+    border-radius: 8px;
+    color: #f8fafc;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #c084fc;
+}
+
+.btn-action {
+    background: #1e293b;
+    color: #38bdf8;
+    border: 1px solid #334155;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-action:hover {
+    background: #0284c7;
+    color: #fff;
+    border-color: #0284c7;
+}
+
+.btn-main {
+    background: linear-gradient(135deg, #d946ef, #8b5cf6);
+    color: #fff;
+    border: none;
+}
+
+.btn-main:hover {
+    opacity: 0.9;
+}
+
+.output-box {
+    background: #090d16;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 0.85rem;
+    color: #a7f3d0;
+    border-left: 3px solid #10b981;
+    white-space: pre-line;
+    min-height: 40px;
+}
+
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    .app-layout {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+    }
+}

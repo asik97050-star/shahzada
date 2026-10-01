@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Lab #3 | Алгоритмдер мен шарттар</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-layout">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo-box">JS</div>
+                <div>
+                    <h2>Lab #3 Dashboard</h2>
+                    <p>JavaScript негіздері</p>
+                </div>
+            </div>
+            
+            <div class="quick-info">
+                <h3>Талаптар:</h3>
+                <ul>
+                    <li>Айнымалылар мен операторлар</li>
+                    <li>Шартты логика (if/else)</li>
+                    <li>Math.max/min қолданбау</li>
+                    <li>Консольге шығару</li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h1>Зертханалық жұмыс №3</h1>
+                <span class="badge">JavaScript Engine</span>
+            </header>
+
+            <div class="dashboard-grid">
+                <!-- Сол жақ баған (Шешімдер 1-5) -->
+                <div class="column">
+                    <!-- 1. Студент -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">01</span>
+                            <h3>Студент профилі</h3>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="t1-name" placeholder="Аты-жөні">
+                            <input type="number" id="t1-age" placeholder="Жасы">
+                        </div>
+                        <input type="text" id="t1-spec" placeholder="Мамандығы" class="full-width">
+                        <button class="btn-action" onclick="task1()">Растау</button>
+                        <div class="output-box" id="res1">Күтілуде...</div>
+                    </div>
+
+                    <!-- 2. Екі сан -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">02</span>
+                            <h3>Екі сан калькуляторы</h3>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" id="t2-num1" placeholder="А саны">
+                            <input type="number" id="t2-num2" placeholder="В саны">
+                        </div>
+                        <button class="btn-action" onclick="task2()">Есептеу</button>
+                        <div class="output-box" id="res2">Күтілуде...</div>
+                    </div>
+
+                    <!-- 3. Сан анализаторы -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">03</span>
+                            <h3>Сан анализаторы</h3>
+                        </div>
+                        <input type="number" id="t3-num" placeholder="Бүтін сан" class="full-width">
+                        <button class="btn-action" onclick="task3()">Талдау жасау</button>
+                        <div class="output-box" id="res3">Күтілуде...</div>
+                    </div>
+
+                    <!-- 4. Қорытынды баға -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">04</span>
+                            <h3>Орташа балл & Емтихан</h3>
+                        </div>
+                        <div class="form-row inputs-3">
+                            <input type="number" id="t4-g1" placeholder="Пән 1">
+                            <input type="number" id="t4-g2" placeholder="Пән 2">
+                            <input type="number" id="t4-g3" placeholder="Пән 3">
+                        </div>
+                        <input type="number" id="t4-att" placeholder="Сабаққа қатысу (%)" class="full-width">
+                        <button class="btn-action" onclick="task4()">Нәтижені шығару</button>
+                        <div class="output-box" id="res4">Күтілуде...</div>
+                    </div>
+
+                    <!-- 5. Дүкен -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">05</span>
+                            <h3>Интернет-дүкен жеңілдігі</h3>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" id="t5-price" placeholder="Бағасы (тг)">
+                            <input type="number" id="t5-count" placeholder="Саны">
+                        </div>
+                        <button class="btn-action" onclick="task5()">Төлемді есептеу</button>
+                        <div class="output-box" id="res5">Күтілуде...</div>
+                    </div>
+                </div>
+
+                <!-- Оң жақ баған (Шешімдер 6-10) -->
+                <div class="column">
+                    <!-- 6. Уақыт -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">06</span>
+                            <h3>Уақыт анықтағыш</h3>
+                        </div>
+                        <input type="number" id="t6-hour" placeholder="Сағат енгізіңіз (0-23)" class="full-width">
+                        <button class="btn-action" onclick="task6()">Сәлемдесуді көрсу</button>
+                        <div class="output-box" id="res6">Күтілуде...</div>
+                    </div>
+
+                    <!-- 7. Үш сан -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">07</span>
+                            <h3>Үш санды салыстыру</h3>
+                        </div>
+                        <div class="form-row inputs-3">
+                            <input type="number" id="t7-n1" placeholder="Сан 1">
+                            <input type="number" id="t7-n2" placeholder="Сан 2">
+                            <input type="number" id="t7-n3" placeholder="Сан 3">
+                        </div>
+                        <button class="btn-action" onclick="task7()">Салыстыру (Math-сыз)</button>
+                        <div class="output-box" id="res7">Күтілуде...</div>
+                    </div>
+
+                    <!-- 8. Банк -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">08</span>
+                            <h3>Банк Скоринг Жүйесі</h3>
+                        </div>
+                        <div class="form-row inputs-3">
+                            <input type="number" id="t8-age" placeholder="Жасы">
+                            <input type="number" id="t8-income" placeholder="Табыс">
+                            <input type="number" id="t8-exp" placeholder="Өтіл (жыл)">
+                        </div>
+                        <button class="btn-action" onclick="task8()">Скоринг тексеру</button>
+                        <div class="output-box" id="res8">Күтілуде...</div>
+                    </div>
+
+                    <!-- 9. Емтихан -->
+                    <div class="panel">
+                        <div class="panel-head">
+                            <span class="num">09</span>
+                            <h3>Емтихан & Практика</h3>
+                        </div>
+                        <div class="form-row">
+                            <input type="number" id="t9-exam" placeholder="Емтихан балы">
+                            <input type="number" id="t9-prac" placeholder="Практика балы">
+                        </div>
+                        <button class="btn-action" onclick="task9()">Тексеру</button>
+                        <div class="output-box" id="res9">Күтілуде...</div>
+                    </div>
+
+                    <!-- 10. Кешенді жүйе -->
+                    <div class="panel highlight-panel">
+                        <div class="panel-head">
+                            <span class="num">10</span>
+                            <h3>Студентті бағалау кешенді жүйесі</h3>
+                        </div>
+                        <div class="form-row">
+                            <input type="text" id="t10-name" placeholder="Аты-жөні">
+                            <input type="number" id="t10-age" placeholder="Жасы">
+                        </div>
+                        <div class="form-row inputs-3">
+                            <input type="number" id="t10-g1" placeholder="Пән 1">
+                            <input type="number" id="t10-g2" placeholder="Пән 2">
+                            <input type="number" id="t10-g3" placeholder="Пән 3">
+                        </div>
+                        <div class="form-row">
+                            <input type="number" id="t10-att" placeholder="Қатысу (%)">
+                            <select id="t10-card">
+                                <option value="true">Студенттік билет: БАР</option>
+                                <option value="false">Студенттік билет: ЖОҚ</option>
+                            </select>
+                        </div>
+                        <button class="btn-action btn-main" onclick="task10()">Кешенді талдау жүргізу</button>
+                        <div class="output-box" id="res10">Күтілуде...</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
